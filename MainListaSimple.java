@@ -1,3 +1,13 @@
+/**
+ * Clase concreta {@code MainListaSimple}
+ * 
+ * @author Luis Fernando Quintana López
+ * @author Erick Xavier Martinez Briones
+ * @version 1.0.0
+ * @since 2026
+ * 
+ */
+
 public class MainListaSimple {
     public static void main(String[] args) {
         ListaLigadaSimple<Integer> lista = new ListaLigadaSimple<>();
