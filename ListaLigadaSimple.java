@@ -62,6 +62,7 @@ public class ListaLigadaSimple<T> implements Lista<T> {
          *
          * @return true si hay un siguiente elemento, false de lo contrario.
          */
+        @Override
         public boolean hasNext() {
             return iteradorLista.siguiente != null;
         }
@@ -72,6 +73,7 @@ public class ListaLigadaSimple<T> implements Lista<T> {
          *
          * @return El siguiente elemento en la lista.
          */
+        @Override
         public T next() {
             iteradorLista = iteradorLista.siguiente;
             return iteradorLista.elemento;
@@ -119,7 +121,7 @@ public class ListaLigadaSimple<T> implements Lista<T> {
         if (this.longitud == 0) {
             Nodo cabezaN = new Nodo(elemento);
             this.cabeza = cabezaN;
-            this.longitud++;
+            
         } else {
             nuevoNodo.siguiente = this.cabeza;
             this.cabeza = nuevoNodo;
@@ -210,6 +212,7 @@ public class ListaLigadaSimple<T> implements Lista<T> {
      * 
      * @param elemento elemento a eliminar de la lista
      */
+    @Override
     public void eliminar(T elemento) {
         if (this.longitud == 0) {
             return;
@@ -242,6 +245,7 @@ public class ListaLigadaSimple<T> implements Lista<T> {
      * @param elemento elemento el cual queremos devolver su indice
      * @return el indice de la primera aparicion del elemento usado como parametro
      */
+    @Override
     public int devolverIndiceElemento(T elemento) throws IllegalArgumentException {
         if (!buscar(elemento)) {
             throw new IllegalArgumentException("El elemento no esta en la lista");
@@ -264,8 +268,9 @@ public class ListaLigadaSimple<T> implements Lista<T> {
      *
      * @return La longitud de la lista.
      */
+    @Override
     public int devolverLongitud() {
-        return this.longitud - 1;
+        return this.longitud;
     }
 
     /**
